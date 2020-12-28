@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header.dart';
+import 'footer.dart';
 
 void main() {
   runApp(App());
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         appBar: Header(),
         body: Center(child: Text("テスト")),
+        bottomNavigationBar: Footer(),
       ),
     );
   }
