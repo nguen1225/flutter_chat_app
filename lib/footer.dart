@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class Footer extends StatefulWidget {
@@ -27,6 +25,15 @@ class Footer extends StatefulWidget {
 // }
 
 class _Footer extends State<Footer> {
+
+  
+
+  @override
+  Widget build(BuildContext context) => throw UnimplementedError();
+  
+  class _bottomNavigationBarItems {
+
+
   //アイコン情報
   static const _footerIcons = [
     Icons.home,
@@ -45,12 +52,13 @@ class _Footer extends State<Footer> {
         'ウォレット'
   ];
 
+
   @override
   void initState() {
     super.initState();
     _bottomNavigationBarItems.add(_UpdateActiveState(0));
     for (var i = 1; i < _footerItemNames.length; i++) {
-      _bottomNavigationBarItems.add(_UpdaateDeactiveState(i));
+      _bottomNavigationBarItems.add(_UpdateDeactiveState(i));
     }
   }
 
@@ -102,4 +110,5 @@ class _Footer extends State<Footer> {
       onTap: _onItemTapped,
     );
   }
+}
 }
