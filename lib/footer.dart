@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class Footer extends StatefulWidget {
   const Footer();
-
   @override
   _Footer createState() => _Footer();
 }
@@ -27,32 +26,30 @@ class Footer extends StatefulWidget {
 //   }
 // }
 
-
 class _Footer extends State<Footer> {
   //アイコン情報
   static const _footerIcons = [
     Icons.home,
-    Icons.textsms
+    Icons.textsms,
     Icons.access_time,
     Icons.content_paste,
     Icons.work,
-
   ];
 
   //アイコンの文字列
   static const _footerItemNames = [
     'ホーム'
-    'トーク'
-    'タイムライン'
-    'ニュース'
-    'ウォレット'
+        'トーク'
+        'タイムライン'
+        'ニュース'
+        'ウォレット'
   ];
 
   @override
   void initState() {
     super.initState();
     _bottomNavigationBarItems.add(_UpdateActiveState(0));
-    for ( var i = 1; i < _footerItemNames.length; i++) {
+    for (var i = 1; i < _footerItemNames.length; i++) {
       _bottomNavigationBarItems.add(_UpdaateDeactiveState(i));
     }
   }
@@ -60,37 +57,37 @@ class _Footer extends State<Footer> {
   //indexのアイテムをアクティベート
   BottomNavigationBarItem _UpdateActiveState(init index) {
     return BottomNavigationBarItem(
-      icon: Icon(
-        _footerIcons[index],
-        color: Colors.black87,
-      ),
-      title: Text(
-        _footerItemNames[index],
-        style: TextStyle(
+        icon: Icon(
+          _footerIcons[index],
           color: Colors.black87,
         ),
-      )
-    );
+        title: Text(
+          _footerItemNames[index],
+          style: TextStyle(
+            color: Colors.black87,
+          ),
+        ));
   }
+
   //indexのアイテムをディアクティブ
   BottomNavigationBarItem _UpdateDeactiveState(init index) {
     return BottomNavigationBarItem(
-      icon: Icon(
-        _footerIcons[index],
-        color: Colors.black26,
-      ),
-      title: Text(
-        _footerItemNames[index],
-        style: TextStyle(
+        icon: Icon(
+          _footerIcons[index],
           color: Colors.black26,
         ),
-      )
-    );
+        title: Text(
+          _footerItemNames[index],
+          style: TextStyle(
+            color: Colors.black26,
+          ),
+        ));
   }
 
   Void _onItemTapped(int index) {
     setState(() {
-      _bottomNavigationBarItems[_selectedIndex] = _UpdateDeactiveState(_selectedIndex);
+      _bottomNavigationBarItems[_selectedIndex] =
+          _UpdateDeactiveState(_selectedIndex);
       _bottomNavigationBarItems[index] = _UpdateActiveState(index);
       _selectedIndex = index;
     });
