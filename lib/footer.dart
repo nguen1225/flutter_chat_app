@@ -6,35 +6,11 @@ class Footer extends StatefulWidget {
   _Footer createState() => _Footer();
 }
 
-// class _Footer extends State {
-//   @override
-//   Widget build(BuildContext context) {
-//     return BottomNavigationBar(
-//       items: const [
-//         BottomNavigationBarItem(
-//           icon: Icon(Icons.home),
-//           title: Text('home'),
-//         ),
-//         BottomNavigationBarItem(
-//           icon: Icon(Icons.home),
-//           title: Text('Home'),
-//         ),
-//       ],
-//     );
-//   }
-// }
-
 class _Footer extends State<Footer> {
+  int _selectedIndex = 0;
+  final _bottomNavigationBarItems = <BottomNavigationBarItem>[];
 
-  
-
-  @override
-  Widget build(BuildContext context) => throw UnimplementedError();
-  
-  class _bottomNavigationBarItems {
-
-
-  //アイコン情報
+  // アイコン情報
   static const _footerIcons = [
     Icons.home,
     Icons.textsms,
@@ -43,15 +19,14 @@ class _Footer extends State<Footer> {
     Icons.work,
   ];
 
-  //アイコンの文字列
+  // アイコン文字列
   static const _footerItemNames = [
-    'ホーム'
-        'トーク'
-        'タイムライン'
-        'ニュース'
-        'ウォレット'
+    'ホーム',
+    'トーク',
+    'タイムライン',
+    'ニュース',
+    'ウォレット',
   ];
-
 
   @override
   void initState() {
@@ -62,8 +37,8 @@ class _Footer extends State<Footer> {
     }
   }
 
-  //indexのアイテムをアクティベート
-  BottomNavigationBarItem _UpdateActiveState(init index) {
+  /// インデックスのアイテムをアクティベートする
+  BottomNavigationBarItem _UpdateActiveState(int index) {
     return BottomNavigationBarItem(
         icon: Icon(
           _footerIcons[index],
@@ -77,8 +52,8 @@ class _Footer extends State<Footer> {
         ));
   }
 
-  //indexのアイテムをディアクティブ
-  BottomNavigationBarItem _UpdateDeactiveState(init index) {
+  /// インデックスのアイテムをディアクティベートする
+  BottomNavigationBarItem _UpdateDeactiveState(int index) {
     return BottomNavigationBarItem(
         icon: Icon(
           _footerIcons[index],
@@ -92,7 +67,7 @@ class _Footer extends State<Footer> {
         ));
   }
 
-  Void _onItemTapped(int index) {
+  void _onItemTapped(int index) {
     setState(() {
       _bottomNavigationBarItems[_selectedIndex] =
           _UpdateDeactiveState(_selectedIndex);
@@ -104,11 +79,10 @@ class _Footer extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
+      type: BottomNavigationBarType.fixed, // これを書かないと3つまでしか表示されない
       items: _bottomNavigationBarItems,
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
     );
   }
-}
 }
