@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+import 'routes/home_route.dart';
+import 'routes/talk_route.dart';
+import 'routes/timeline_rout.dart';
+import 'routes/wallet_route.dart';
+import 'routes/news_route.dart';
 
 class Footer extends StatefulWidget {
   const Footer();
@@ -26,6 +33,14 @@ class _Footer extends State<Footer> {
     'タイムライン',
     'ニュース',
     'ウォレット',
+  ];
+
+  var _routes = [
+    Home(),
+    Talk(),
+    Timeline(),
+    News(),
+    Wallet(),
   ];
 
   @override
@@ -78,11 +93,14 @@ class _Footer extends State<Footer> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed, // これを書かないと3つまでしか表示されない
-      items: _bottomNavigationBarItems,
-      currentIndex: _selectedIndex,
-      onTap: _onItemTapped,
+    return Scaffold(
+      body: _routes.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // これを書かないと3つまでしか表示されない
+        items: _bottomNavigationBarItems,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
