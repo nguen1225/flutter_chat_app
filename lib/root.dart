@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'routes/home_route.dart';
 import 'routes/talk_route.dart';
 import 'routes/timeline_rout.dart';
-import 'routes/wallet_route.dart';
-import 'routes/news_route.dart';
 
 // class Footer extends StatefulWidget {
 //   const Footer();
@@ -29,8 +27,6 @@ class _RootWidgetState extends State<RootWidget> {
     Icons.home,
     Icons.textsms,
     Icons.access_time,
-    Icons.content_paste,
-    Icons.work,
   ];
 
   // アイコン文字列
@@ -38,16 +34,12 @@ class _RootWidgetState extends State<RootWidget> {
     'ホーム',
     'トーク',
     'タイムライン',
-    'ニュース',
-    'ウォレット',
   ];
 
   var _routes = [
     Home(),
     Talk(),
     Timeline(),
-    News(),
-    Wallet(),
   ];
 
   @override
