@@ -1,15 +1,31 @@
 import 'package:flutter/material.dart';
+import 'talk.dart';
 
 class Talk extends StatelessWidget {
-  // <- (※1)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("talk"), // <- (※2)
+        title: Text("トーク"),
       ),
-      body: Center(child: Text("トーク") // <- (※3)
-          ),
+      body: ListView(padding: const EdgeInsets.all(8), children: <Widget>[
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+        Tile(),
+      ]),
     );
   }
 }
