@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'routes/home_route.dart';
 import 'routes/talk_route.dart';
@@ -7,13 +7,20 @@ import 'routes/timeline_rout.dart';
 import 'routes/wallet_route.dart';
 import 'routes/news_route.dart';
 
-class Footer extends StatefulWidget {
-  const Footer();
+// class Footer extends StatefulWidget {
+//   const Footer();
+//   @override
+//   _Footer createState() => _Footer();
+// }
+
+class RootWidget extends StatefulWidget {
+  RootWidget({Key key}) : super(key: key);
+
   @override
-  _Footer createState() => _Footer();
+  _RootWidgetState createState() => _RootWidgetState();
 }
 
-class _Footer extends State<Footer> {
+class _RootWidgetState extends State<RootWidget> {
   int _selectedIndex = 0;
   final _bottomNavigationBarItems = <BottomNavigationBarItem>[];
 
